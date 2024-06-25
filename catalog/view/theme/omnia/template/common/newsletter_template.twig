@@ -1,0 +1,32 @@
+<div id="overlay-page"></div>
+
+<div id="flex">
+
+  <div class="window">
+    <div class="left-side">
+      <h1>{{ newsletter_h1 }}</h1>
+      <p>{{ talk }}</p>
+    </div>
+    <div class="right-side">
+        <p>{{ firstname }}</p>
+        <input type="text" id="firstname" placeholder="{{ firstname_input }}" autoComplete="off">
+        <p>{{ lastname }}</p>
+        <input type="text" id="lastname" placeholder="{{ lastname_input }}" autoComplete="off">
+        <p>{{ email }}</p>
+        <input type="email" id="email" placeholder="{{ email_input }}" autoComplete="off">
+      <div class="result">
+        <button id="subscribe">{{ subscribe }}</button>
+        <div class="link"><a href="#" id="no-thanks">{{ no_thanks }}</a></div>
+      </div>
+      <div class="thankyou">
+        {{ thankyou }}
+      </div>
+      <div class="problem">
+        {{ problem }}
+      </div>
+      <div class="allready">
+        {{ allready }}
+      </div>
+    </div>
+  </div>
+</div>

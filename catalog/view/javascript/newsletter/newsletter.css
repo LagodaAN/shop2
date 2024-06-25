@@ -1,0 +1,99 @@
+#overlay-page {
+  position:fixed;
+  display:none;
+  left:0;
+  top:0;
+  background: rgba(0, 0, 0, .80);
+  z-index:99999;
+  width:100%;
+  height:100%
+}
+#flex {
+  display: none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  align-items: center;
+  justify-content: center;
+  z-index:100000;
+}
+#flex .window {
+  width:50%;
+  height:60%;
+  background:#FFF;
+}
+
+#flex .window .left-side {
+  height:100%;
+  position:relative;
+  width:50%;
+  padding:3em;
+  color:#000;
+  float:left;
+  background-image:url(newsletter.webp);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center
+}
+#flex .window .left-side h1, #flex .window .left-side p, #flex .window .left-side a {
+  -webkit-text-stroke-width:0;
+  color:#000;
+}
+#flex .window .right-side .link {
+  text-align: center;
+  margin-top:1em;
+}
+#flex .window .right-side a {
+  text-decoration:underline;
+}
+#flex .window .right-side {
+  height:100%;
+  padding:3em;
+  float:right;
+  width:50%
+}
+#flex .window .right-side p {
+  color:#a6a6a6;
+  font-size:0.8em
+}
+#flex .window .right-side .thankyou, #flex .window .right-side .problem, #flex .window .right-side .allready {
+  display: none;
+}
+#flex .window input[type="text"], #flex .window input[type="email"] {
+  outline: none;
+  padding: 10px 0;
+  margin-bottom:2em;
+  border:0;
+  width:100%;
+  border-bottom:2px solid #a6a6a6
+}
+#flex .window button {
+  background:#000;
+  width:100%;
+  text-transform:uppercase;
+  color:#FFF;
+  padding:1em;
+  border:0
+}
+@media only screen and (max-width: 767px) {
+  #flex .window .right-side {
+    padding:3em;
+    float:none;
+    height: auto;
+    width:100%
+  }
+  #flex .window .left-side {
+    padding:3em;
+    height: auto;
+    float:none;
+    width:100%
+  }
+}
+@media only screen and (max-width: 991px) {
+  #flex .window {
+    width:90%;
+    height:90%
+  }
+}

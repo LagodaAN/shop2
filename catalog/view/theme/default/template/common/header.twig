@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>{{ title }}</title>
+		<base href="{{ base }}" />
+		{% if description %}
+		<meta name="description" content="{{ description }}" />
+		{% endif %}
+		{% if keywords %}
+		<meta name="keywords" content="{{ keywords }}" />
+		{% endif %}
+		<script src="catalog/view/javascript/jquery/jquery-3.7.0.min.js" type="text/javascript"></script>
+		<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+		<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		
+		<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+		{% for style in styles %}
+		<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+		{% endfor %}
+		{% for script in scripts %}
+		<script src="{{ script }}" type="text/javascript"></script>
+		{% endfor %}
+		<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+		{% for link in links %}
+		<link href="{{ link.href }}" rel="{{ link.rel }}" />
+		{% endfor %}
+		<link rel="icon" href="img/Fevicon.png" type="image/png">
+		<link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+	
+		<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+		<link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+		<link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+		
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	
+	<body>
+		<!--================ Start Header Menu Area =================-->
+		<header class="header_area">
+			<div class="main_menu">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<a class="navbar-brand logo_h" href="/">
+							{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+							<h1><a href="{{ home }}">{{ name }}</a></h1>
+							{% endif %}
+							
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+								<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+									<li class="nav-item active"><a class="nav-link" href="/">Главная</a></li>
+									
+									
+									<li class="nav-item submenu dropdown">
+										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Пользователю</a>
+										<ul class="dropdown-menu">
+											{% if logged %}
+											
+											
+											{% else %}
+											
+											<li class="nav-item"><a class="nav-link" href="{{ login }}">Войти</a></li>
+											{% endif %}
+											
+											<li class="nav-item"><a class="nav-link" href="{{register}}">Зарегестрироваться</a></li>
+											<li class="nav-item"><a class="nav-link" href="{{ tracking }}">{{ text_tracking }}</a></li>				
+											
+												<li class="nav-item"><a class="nav-link" href="{{ wishlist }}" title="{{ text_wishlist }}">{{ text_wishlist }}</a></li>
+												<li class="nav-item"><a class="nav-link" href="{{ shopping_cart }}" title="{{ text_shopping_cart }}">{{ text_shopping_cart }}</a></li>
+												<li class="nav-item"><a class="nav-link" href="{{ checkout }}" title="{{ text_checkout }}">{{ text_checkout }}</a></li>
+										</ul>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="{{ contact }}">Контакты</a></li>
+								</ul>
+								
+								<ul class="nav-shop">
+									
+									<!-- {{ search }}
+									{{ cart }} -->
+									<li class="nav-item"><button><i class="ti-search"></i></button></li>
+									<li class="nav-item">
+										<a href="index.php?route=checkout/cart">
+											<button><i class="ti-shopping-cart"></i><span id="cart-total" class="nav-shop__circle">{{cart}}</span></button>
+										</a>
+									</li> 
+									
+									{% if logged %}
+									
+									<li class="nav-item"><a class="button button-header" href="{{ account }}">{{ text_account }}</a></li>
+									{% else %}
+									
+									<li class="nav-item"><a class="button button-header" href="{{ login }}">{{ text_login }}</a></li>
+									{% endif %}
+									
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>						

@@ -1,0 +1,84 @@
+{{ header }}
+<section class="blog-banner-area" id="category">
+	<div class="container h-100">
+		<div class="blog-banner">
+			<div class="text-center">
+				<h1>Войти/Зарегистрироваться</h1>
+				<nav aria-label="breadcrumb" class="banner-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Главная</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Войти/Зарегистрироваться</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="login_box_area section-margin">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="login_box_img">
+					<div class="hover">
+						<h4>Впервые на нашем сайте?</h4>
+						<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+						<a class="button button-account" href="{{ register }}">Создайте аккаунт</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="login_form_inner">
+					<h3>Войдите в свой аккаунт</h3>
+					{% if success %}
+					<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+					{% endif %}
+					{% if error_warning %}
+					<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+					{% endif %}
+					<form class="row login_form" action="{{ action }}" method="post" enctype="multipart/form-data">
+						<div class="col-md-12 form-group">
+							<label class="control-label" for="input-email">{{ entry_email }}</label>
+							<input type="text" name="email" value="{{ email }}" placeholder="{{ entry_email }}" id="input-email" class="form-control" />
+						</div>
+						<div class="col-md-12 form-group">
+							<label class="control-label" for="input-password">{{ entry_password }}</label>
+							<input type="password" name="password" value="{{ password }}" placeholder="{{ entry_password }}" id="input-password" class="form-control" />
+						<a href="{{ forgotten }}">{{ text_forgotten }}</a></div>
+						<input type="submit" value="{{ button_login }}" class="button button-register w-100" />
+						{% if redirect %}
+						<input type="hidden" name="redirect" value="{{ redirect }}" />
+						{% endif %}
+					</form>
+				</div>
+			</div> 
+		</div>
+	</div> 
+</section>
+{{ footer }}
+<div class="login_form_inner register_form_inner">
+          <h3>Зарегистрироваться</h3>
+          <form class="row login_form" onsubmit="sendForm(this); return false;">
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" required="" name="name" placeholder="Ваше имя" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваше имя'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" required="" name="lastname" placeholder="Ваша фамилия" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ваша фамилия'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="email" class="form-control" required="" name="email" placeholder="Email адрес" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email адрес'">
+            </div>
+            <div class="col-md-12 form-group">
+              <input type="password" class="form-control" required="" name="pass" placeholder="Придумайте пароль" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Придумайте пароль'">
+            </div>
+            <div class="col-md-12 form-group">
+              <div class="creat_account">
+                <input type="checkbox" id="f-option2" required="">
+                <label for="f-option2">Согласие на обработку персональных данных</label>
+              </div>
+            </div>
+						<p id="info" style="color: red"></p>
+            <div class="col-md-12 form-group">
+              <button type="submit" class="button button-register w-100">Зарегистрироваться</button>
+            </div>
+          </form>
+        </div>
